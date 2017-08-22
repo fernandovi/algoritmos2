@@ -1,0 +1,149 @@
+#include <iostream>
+#include <conio.h>
+#include "funciones.h"
+#define    MAX 100
+using namespace std;
+/*void main()
+{
+    int vectorA[MAX],vectorB[MAX],vectorC[MAX],n,m,tamC,k,l;
+    cout<<"Ingrese el tamano del vector A:  ";
+    cin>>n;
+    cout<<"Ingrese los datos del vector A:  "<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cout<<"Vector A["<<i<<"] = ";
+        cin>>vectorA[i];
+    }
+    cout<<endl;
+    cout<<"Ingrese el tamano del vector B:  ";
+    cin>>m;
+    cout<<"Ingrese los datos del vector B:  "<<endl;
+    for(int i=0;i<m;i++)
+    {
+        cout<<"Vector A["<<i<<"] = ";
+        cin>>vectorB[i];
+    }
+    cout<<endl;
+    if(n==m)
+    {
+        tamC=n;
+        for(int i=0;i<tamC;i++)
+        {
+            vectorC[i]=vectorA[i]+vectorB[i];
+        }
+    }
+    else
+    {
+        if(n<m)
+        {
+            tamC=m;
+            for(k=0;k<n;k++)
+            {
+                vectorC[k]=vectorA[k]+vectorB[k];
+            }
+            for(int j=k;j<tamC;j++)
+            {
+                vectorC[j]=vectorB[j];
+            }
+        }
+        else
+        {
+            if(n>m)
+            {
+                tamC=n;
+                for(l=0;l<m;l++)
+                {
+                    vectorC[l]=vectorA[l]+vectorB[l];
+                }
+                for(int j=l;j<tamC;j++)
+                {
+                    vectorC[j]=vectorA[j];
+                }
+            }
+        }
+    }
+    cout<<"LA SUMA DE VECTORES ES:  "<<endl;
+    for(int i=0;i<tamC;i++)
+    {
+        cout<<"Vector C["<<i<<"] = "<<vectorC[i]<<endl;
+    }
+    getch();
+}*/
+
+void main()
+{
+	int vectorA[MAX],vectorB[MAX],vectorC[MAX],n,m,tamC,k,l;
+    cout<<"Ingrese el tamano del vector A:  ";
+    cin>>n;
+    cout<<"Ingrese los datos del vector A:  "<<endl;
+	cargarVector(vectorA,n);
+	cout<<endl;
+    cout<<"Ingrese el tamano del vector B:  ";
+    cin>>m;
+    cout<<"Ingrese los datos del vector B:  "<<endl;
+	cargarVector(vectorB,m);
+	sumaVectores(vectorA,vectorB,n,m);
+	getch();
+}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+#define MAX 100
+using namespace std;
+void cargarVector(int vector[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<"Vector ["<<i<<"] = ";
+        cin>>vector[i];
+    }
+}
+void mostrarVector (int vector[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<"Vector C["<<i<<"] = "<<vector[i]<<endl;
+    }
+}
+void sumaVectores (int vectorA[],int vectorB[],int n,int m)
+{
+    int vectorC[MAX],tamC,k,l;
+    if(n==m)
+    {
+        tamC=n;
+        for(int i=0;i<tamC;i++)
+        {
+            vectorC[i]=vectorA[i]+vectorB[i];
+        }
+    }
+    else
+    {
+        if(n<m)
+        {
+            tamC=m;
+            for(k=0;k<n;k++)
+            {
+                vectorC[k]=vectorA[k]+vectorB[k];
+            }
+            for(int j=k;j<tamC;j++)
+            {
+                vectorC[j]=vectorB[j];
+            }
+        }
+        else
+        {
+            if(n>m)
+            {
+                tamC=n;
+                for(l=0;l<m;l++)
+                {
+                    vectorC[l]=vectorA[l]+vectorB[l];
+                }
+                for(int j=l;j<tamC;j++)
+                {
+                    vectorC[j]=vectorA[j];
+                }
+            }
+        }
+    }
+	cout<<"LA SUMA DE VECTORES ES:  "<<endl;
+	mostrarVector(vectorC,tamC);
+}
